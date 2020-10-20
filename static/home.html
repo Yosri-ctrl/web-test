@@ -14,11 +14,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
-
   <body>
     <header>
       <!--<a href="#home">
-        <img class="logo" src="style/img/logo3.png" />
+        <img class="logo" src="style/img/logo.png" />
       </a>-->
       <div class="navigateur">
         <a class="active" href="#home">Home</a>
@@ -34,25 +33,83 @@
         </div>
       </div>
     </header>
+
     <div class="main">
       <article>
-        <div id="slideshow">
-          <div class="slide">
-            <a href="">
-              <img
-                class="img-h"
-                src="style/img/dictionary-932327.jpg"
-                width="600"
-                height="350"
-              />
+        <div class="slide">
+          <a href="">
+            <img
+              class="image"
+              src="style/img/dictionary-932327.jpg"
+              width="600"
+              height="350"
+            />
+            <div class="middle">
               <div class="name"><strong>Cource name</strong></div>
               <div class="auther">Auther name</div>
-              <div calss="rate">*_*_*_*_*</div>
+              <div class="rate">*_*_*_*_*</div>
               <div class="price">15$</div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </article>
     </div>
+    <h2 class="w3-center">Manual Slideshow</h2>
+
+    <div class="w3-content" style="max-width: 800px; position: relative">
+      <img
+        class="mySlides"
+        src="style/img/code-3337044.jpg"
+        style="width: 100%"
+      />
+      <img class="mySlides" src="style/img/images.jpeg" style="width: 100%" />
+      <img
+        class="mySlides"
+        src="style/img/old-letters-436503.jpg"
+        style="width: 100%"
+      />
+      <img
+        class="mySlides"
+        src="style/img/laptop-3174729.jpg"
+        style="width: 100%"
+      />
+
+      <a
+        class="w3-btn-floating"
+        style="position: absolute; top: 45%; left: 0"
+        onclick="plusDivs(-1)"
+        >❮</a
+      >
+      <a
+        class="w3-btn-floating"
+        style="position: absolute; top: 45%; right: 0"
+        onclick="plusDivs(1)"
+        >❯</a
+      >
+    </div>
+
+    <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs((slideIndex += n));
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+      }
+    </script>
   </body>
 </html>
