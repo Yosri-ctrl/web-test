@@ -5,6 +5,8 @@
     <title>YouLearn</title>
     <link rel="icon" href="style/img/img.png" type="image/icon type" />
     <link rel="stylesheet" type="text/css" href="style/home-style.css" />
+    <link rel="stylesheet" type="text/css" href="style/login.css" />
+    <link rel="stylesheet" type="text/css" href="style/scroll.scss" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -13,9 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet" />
-    <script src="http://vjs.zencdn.net/4.12/video.js"></script>
+    <script href="script/script.js"></script>
   </head>
   <body>
     <header>
@@ -34,9 +34,40 @@
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
+        <button class="button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
       </div>
     </header>
 
+    <div id="id01" class="modal">
+    
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+          <img src="style/img/profile.png" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input class="input" type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input class="input" type="password" placeholder="Enter Password" name="psw" required>
+    
+          <button class="button" type="submit">Login</button>
+          <label>
+            <input class="input" type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'"
+            class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+    <!--
     <div class="main">
       <article>
         <div class="slideshow-container">
@@ -51,7 +82,7 @@
               <div class="middle">
                 <div class="name"><strong>Cource name</strong></div>
                 <div class="auther">Auther name</div>
-                <!--<div class="rate">*_*_*_*_*</div>-->
+                <div class="rate">*_*_*_*_*</div>
                 <div class="price">15$</div>
               </div>
             </a>
@@ -67,7 +98,7 @@
               <div class="middle">
                 <div class="name"><strong>Cource name</strong></div>
                 <div class="auther">Auther name</div>
-                <!--<div class="rate">*_*_*_*_*</div>-->
+                <div class="rate">*_*_*_*_*</div>
                 <div class="price">10$</div>
               </div>
             </a>
@@ -83,7 +114,7 @@
               <div class="middle">
                 <div class="name"><strong>Cource name</strong></div>
                 <div class="auther">Auther name</div>
-                <!--<div class="rate">*_*_*_*_*</div>-->
+                <div class="rate">*_*_*_*_*</div>
                 <div class="price">20$</div>
               </div>
             </a>
@@ -93,40 +124,9 @@
         </div>
       </article>
     </div>
-  </body>
+  -->
   <footer>
     <div class="footer">Holberton School</div>
   </footer>
-  <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
 
-    function plusSlides(n) {
-      showSlides((slideIndex += n));
-    }
-
-    function currentSlide(n) {
-      showSlides((slideIndex = n));
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("slide");
-      var dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-    }
-  </script>
 </html>
